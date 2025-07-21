@@ -1,12 +1,13 @@
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.stream.Collectors;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Processador {
     //ATRIBUTOS
+    List<String> enderecos = new ArrayList<>();
 
 
     //CONSTRUTOR
@@ -17,20 +18,17 @@ public class Processador {
 
     //LEITURA ARQUIVO
 
-    public void ler_arquivo () {
-        try {
-            InputStream inputStream = getClass().getResourceAsStream("/enderecos.txt");
-            if (inputStream != null) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-                String conteudo = reader.lines().collect(Collectors.joining("\n"));
-                System.out.println(conteudo);
-            } else {
-                System.out.println("Arquivo não encontrado.");
+    public List <String> ler_arquivo () {
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream("arquivos/enderecos.txt");
+            BufferedReader leitor = new BufferedReader(new InputStreamReader(is))) {
+            String linha;
+            while ((linha = leitor.readLine()) != null) {
+                enderecos.add(linha); // Adicionando os enderecos em uma lista pra ser mais facil manipular
             }
-        } catch (Exception e) {
+        } catch (IOException | NullPointerException e) {
             e.printStackTrace();
-            System.out.println("Erro ao carregar o arquivo.");
         }
+        return enderecos;
     }
 
     //METODOS
