@@ -16,7 +16,7 @@ public class Cache {
     //ATRIBUTOS
     // Atributos de configuração da cache
     private final String nome;
-    private final int nsets, bsize, assoc; // To usando no construtor java do crl
+    private final int nsets, bsize, assoc; // To usando no construtor java ):
     private final int numBitsOffset;
     private final int numBitsIndice;
     
