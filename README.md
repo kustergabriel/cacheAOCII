@@ -15,4 +15,17 @@
 * Coletar e reportar as métricas de desempenho, como taxas de hit e miss.
 #### Em suma, o Simulador une todos os componentes, transformando as estruturas de dados em um sistema funcional e coeso.
 
+## Forma de executar
+
+* Clone o repositorio para a sua maquina
+* Navegue ate o diretorio que se encontram os arquivos .java
+* Insira no terminal o comando para gerar os arquivos .class
+    * javac *.java
+* Rode o script Python para gerar os endereços
+    * python3 script.py
+* E finalmente executar o simulador passando os parametros que deseja para o tamanho da cache
+    * java Simulador nsets_L1:bsize_L1:assoc_L1 ARQUIVO_GERADO_PELO_SCRIPT_PYTHON
+
+
+
 ###### Projeto feito por: Gabriel Kuster e Junior Prediger
