@@ -23,7 +23,7 @@
     * javac *.java
 * Rode o script Python para gerar os endereços
     * python3 script.py
-* E finalmente executar o simulador passando os parametros que deseja para o tamanho da cache
+* E finalmente execute o simulador passando os parametros que deseja para o tamanho da cache
     * java Simulador nsets_L1:bsize_L1:assoc_L1 ARQUIVO_GERADO_PELO_SCRIPT_PYTHON
 
 
